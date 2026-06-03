@@ -22,7 +22,7 @@ def main():
     # as it's handled by environment variables or CLI flags
     # But for local consistency with other scripts:
     # mlflow.set_tracking_uri('http://127.0.0.1:5000')
-    mlflow.set_experiment('Heart Disease MLProject')
+    # mlflow.set_experiment('Heart Disease MLProject') # Removed to prevent conflict with mlflow run CLI
 
     X_train = np.load(os.path.join(args.data_path, 'X_train.npy'))
     X_test = np.load(os.path.join(args.data_path, 'X_test.npy'))
