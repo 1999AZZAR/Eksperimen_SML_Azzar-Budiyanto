@@ -54,12 +54,23 @@ async def run():
         print('Capturing Grafana...')
         await page.goto('http://localhost:3000/login')
         try:
-            await page.fill('input[name="user"]', 'dicoding')
+            await page.fill('input[id=":r0:"]', 'admin') # or just use generic placeholder
+        except:
+            await page.fill('input[name="user"]', 'admin')
+            
+        try:
+            await page.fill('input[id=":r1:"]', 'admin')
+        except:
             await page.fill('input[name="password"]', 'admin')
-            await page.click('button[type="submit"]')
-            await page.wait_for_timeout(3000)
-        except Exception as e:
-            print("Login step skipped or failed:", e)
+            
+        await page.click('button[type="submit"]')
+        await page.wait_for_timeout(3000)
+        
+        # Click skip if asked to change password
+        try:
+            await page.click('text="Skip"')
+            await page.wait_for_timeout(2000)
+        except:
             pass
             
         await page.goto('http://localhost:3000/')

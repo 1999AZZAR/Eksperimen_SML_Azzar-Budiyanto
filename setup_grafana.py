@@ -1,7 +1,7 @@
 import requests
 import json
 
-GRAFANA_URL = "http://dicoding:admin@localhost:3000"
+GRAFANA_URL = "http://admin:admin@localhost:3000"
 
 def setup_grafana():
     # 1. Setup Prometheus Datasource
@@ -9,7 +9,7 @@ def setup_grafana():
     ds_payload = {
         "name": "Prometheus",
         "type": "prometheus",
-        "url": "http://localhost:9090",
+        "url": "http://172.17.0.1:9090", # use docker bridge ip to hit prometheus or host network
         "access": "proxy",
         "isDefault": True
     }
@@ -21,13 +21,13 @@ def setup_grafana():
     else:
         print(f"Failed to create datasource: {r.status_code} {r.text}")
 
-    # 2. Setup Dashboard named "Heart Disease Monitoring - azzar_budiyanto"
+    # 2. Setup Dashboard named "Heart Disease Monitoring - azzar budiyanto"
     print("Setting up Dashboard...")
     dashboard_payload = {
         "dashboard": {
             "id": None,
             "uid": "heart_disease_azzar",
-            "title": "Heart Disease Monitoring - azzar_budiyanto",
+            "title": "Heart Disease Monitoring - azzar budiyanto",
             "tags": [ "templated" ],
             "timezone": "browser",
             "schemaVersion": 36,
