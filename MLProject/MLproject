@@ -1,0 +1,17 @@
+name: Heart Disease Classification
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      max_depth:
+        type: int
+        default: 10
+      n_estimators:
+        type: int
+        default: 100
+      data_path:
+        type: str
+        default: heart_disease_preprocessing
+    command: "python main.py --max_depth {max_depth} --n_estimators {n_estimators} --data_path {data_path}"
