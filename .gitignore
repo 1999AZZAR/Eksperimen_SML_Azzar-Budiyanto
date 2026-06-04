@@ -1,78 +1,24 @@
-# PDFs
-*.pdf
+# Ignore everything by default
+*
+!*/
 
-# Temporary submission folders
-SUBMISSION_CLEAN/
-REPO_WORKFLOW_CI/
-BACKUP_ALL/
-TEMP_CI/
-TEMP_EXP/
-exporter.log
-inference.log
-mlflow.log
-output.log
-bukti_serving.html
-capture_screenshots.py
-setup_grafana.py
+# Allow specific required files/folders
+!.gitignore
+!README.md
+!.github/
+!.github/workflows/
+!.github/workflows/*
+!heart_disease_raw/
+!heart_disease_raw/*
+!preprocessing/
+!preprocessing/*
+!preprocessing/heart_disease_preprocessing/
+!preprocessing/heart_disease_preprocessing/*
 
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-*.egg-info/
-dist/
-build/
-*.egg
-
-# Virtual environments
-.venv/
-venv/
-env/
-ENV/
-
-# Jupyter Notebook
-.ipynb_checkpoints/
-
-# MLflow
-mlruns/
-mlartifacts/
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
-
-# OS
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# Logs
-*.log
-
-# Model artifacts (large files)
-*.pkl
-*.joblib
-*.h5
-*.pt
-*.pth
-*.onnx
-*.pb
-*.tflite
-*.bin
-
-# Memory database
-memory.db
-
-# Temporary files
-*.tmp
-*.temp
-.cache/
-
-# Large dataset files (if any)
-*.zip
-*.tar.gz
-*.rar
+# Specifically ignore MLProject and other non-Kriteria-1 folders in this REPO
+# (They stay in the ZIP but not in this specific Eksperimen repo)
+MLProject/
+Membangun_model/
+Monitoring\ dan\ Logging/
+SUBMISSION_FINAL/
+SMSML_Azzar-Budiyanto.zip
