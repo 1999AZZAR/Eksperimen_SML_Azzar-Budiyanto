@@ -1,3 +1,20 @@
+# PDFs
+*.pdf
+
+# Temporary submission folders
+SUBMISSION_CLEAN/
+REPO_WORKFLOW_CI/
+BACKUP_ALL/
+TEMP_CI/
+TEMP_EXP/
+exporter.log
+inference.log
+mlflow.log
+output.log
+bukti_serving.html
+capture_screenshots.py
+setup_grafana.py
+
 # Python
 __pycache__/
 *.py[cod]
