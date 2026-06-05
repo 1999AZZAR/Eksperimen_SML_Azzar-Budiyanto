@@ -1,0 +1,20 @@
+name: End-to-End ML Pipeline (Thyroid)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  preprocess:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Install dependencies
+        run: pip install pandas numpy scikit-learn joblib
+      - name: Run Preprocessing
+        run: python preprocessing/automate_Azzar-Budiyanto.py
