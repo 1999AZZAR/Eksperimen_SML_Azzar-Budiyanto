@@ -1,0 +1,31 @@
+# Ignore everything
+*
+!*/
+
+# Allow specific files in root
+!.gitignore
+!README.md
+!Workflow-CI.txt
+!Eksperimen_SML_Azzar-Budiyanto.txt
+
+# Kriteria 1 structure
+!thyroid_raw/
+!thyroid_raw/*
+!preprocessing/
+!preprocessing/Eksperimen_Azzar-Budiyanto.ipynb
+!preprocessing/automate_Azzar-Budiyanto.py
+!preprocessing/thyroid_preprocessing/
+!preprocessing/thyroid_preprocessing/*
+
+# .github for CI
+!.github/
+!.github/workflows/
+!.github/workflows/*
+
+# Folders for ZIP (ignored by git but we keep them locally to zip)
+Membangun_model/
+Monitoring\ dan\ Logging/
+SUBMISSION_FINAL/
+SMSML_Azzar-Budiyanto.zip
+*.log
+*.db
