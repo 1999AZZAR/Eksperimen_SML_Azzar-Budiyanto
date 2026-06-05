@@ -1,4 +1,4 @@
-name: End-to-End ML Pipeline (Thyroid)
+name: Automated Preprocessing Pipeline
 
 on:
   push:
@@ -18,3 +18,8 @@ jobs:
         run: pip install pandas numpy scikit-learn joblib
       - name: Run Preprocessing
         run: python preprocessing/automate_Azzar-Budiyanto.py
+      - name: Upload Preprocessed Data Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: preprocessed-dataset
+          path: preprocessing/thyroid_preprocessing/
