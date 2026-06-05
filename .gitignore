@@ -1,38 +1,31 @@
-# Ignore everything by default
+# Ignore everything
 *
 !*/
 
-# Allow standard metadata
+# Allow specific files in root
 !.gitignore
 !README.md
+!Workflow-CI.txt
+!Eksperimen_SML_Azzar-Budiyanto.txt
+
+# Kriteria 1 structure
+!thyroid_raw/
+!thyroid_raw/*
+!preprocessing/
+!preprocessing/Eksperimen_Azzar-Budiyanto.ipynb
+!preprocessing/automate_Azzar-Budiyanto.py
+!preprocessing/thyroid_preprocessing/
+!preprocessing/thyroid_preprocessing/*
+
+# .github for CI
 !.github/
 !.github/workflows/
 !.github/workflows/*
 
-# Kriteria 1: Dataset Raw (Thyroid)
-!thyroid_raw/
-!thyroid_raw/*
-
-# Kriteria 1: Preprocessing Folder (Thyroid)
-!preprocessing/
-!preprocessing/*
-!preprocessing/thyroid_preprocessing/
-!preprocessing/thyroid_preprocessing/*
-
-# Kriteria 3: MLProject (Required for the training job)
-!MLProject/
-!MLProject/*
-
-# Specifically ignore other non-mandatory submission folders in the GITHUB REPO
+# Folders for ZIP (ignored by git but we keep them locally to zip)
 Membangun_model/
 Monitoring\ dan\ Logging/
-SMSML_Azzar-Budiyanto/
 SUBMISSION_FINAL/
-SUBMISSION_CLEAN/
-BACKUP_ALL/
-TEMP_SS/
-heart_disease_raw/
-heart_disease_preprocessing/
-*.zip
+SMSML_Azzar-Budiyanto.zip
 *.log
 *.db
